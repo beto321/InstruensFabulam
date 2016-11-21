@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 #include <string.h>
 
 char Mat[25][20][80], dir[100];
@@ -10,8 +10,8 @@ void chars(char ch, int length){
 		putchar(ch);
 
 }
-void print(char ch1, charch2){
-	it i;
+void print(char ch1, char ch2){
+	int i;
 	putchar(ch1);
 	for(i=0; i<cols; i++){
 		if(i)
@@ -27,14 +27,14 @@ void printline(int row){
 	for(i=0; i<cols; i++){
 		if(i)
 			putchar('|');
-		wrd=stlen(Mat[row][i]);
+		wrd=strlen(Mat[row][i]);
 		switch(dir[i]){
 			case '<':
-			le=1; 
+			le=1;
 			ri=size[i]-wrd+1;
 			break;
 			case '>':
-			le=size[i]-wrd+1; 
+			le=size[i]-wrd+1;
 			ri=1;
 			break;
 			case '=':
@@ -66,9 +66,9 @@ int main()
 		row=0;
 		while(1){
 			gets(line);
-			if(line[0]=='<' || line [0]=='>' || linew [0]=='=' || line [0]=='*')
+			if(line[0]=='<' || line [0]=='>' || line [0]=='=' || line [0]=='*')
 				break;
-			for(cad=strtok(line"&"), col=0; cad!=NULL; cad=strtok(NULL,"&"), col++){
+			for(cad=strtok(line,"&"), col=0; cad!=NULL; cad=strtok(NULL,"&"), col++){
 				strcpy(Mat[row][col], cad);
 				sz=strlen(cad);
 				if(sz>size[col])
